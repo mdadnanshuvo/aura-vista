@@ -52,3 +52,5 @@ const HouseRules = () => {
       </div>
     );
   };
+
+   export default HouseRules;

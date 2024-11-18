@@ -1,6 +1,6 @@
 import { Utensils, Waves, Car, Trees, Search, Baby, Dog, PartyPopper, Cigarette } from 'lucide-react';
 
-const Amenities = () => {
+const AmenitiesDetails = () => {
   const amenities = [
     { icon: <Utensils className="w-5 h-5" />, label: 'Kitchen' },
     { icon: <Waves className="w-5 h-5" />, label: 'Ocean view' },
@@ -33,4 +33,4 @@ const Amenities = () => {
   );
 };
 
-export default Amenities;
+export default AmenitiesDetails;

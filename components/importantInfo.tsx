@@ -24,3 +24,4 @@ const ImportantInformation = () => {
     );
   };
   
+  export default ImportantInformation;

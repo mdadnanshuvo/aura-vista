@@ -46,3 +46,4 @@ const DamageAndCancellation = () => {
     );
   };
   
+  export default DamageAndCancellation;

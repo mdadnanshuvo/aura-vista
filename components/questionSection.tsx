@@ -1,25 +1,75 @@
-import React from 'react';
-import {  Waves, Car, Trees, Search, Baby, Dog, PartyPopper, Cigarette } from 'lucide-react';
+import ImageGallery from "@/components/ImageGallary";
+import TabsSection from "@/components/tabs";
+import PropertyDetails from "@/components/propertyDetails";
+import AmenitiesSection from "@/components/amenities";
+import MapSection from "@/components/mapSection";
+import BookingSection from "@/components/bookingCard";
+import AboutProperty from "@/components/aboutProperty";
+import RoomsAndBeds from "@/components/rooms_beds";
+import HouseRules from "@/components/houseRules";
+import ImportantInfo from "@/components/importantInfo";
+import DamageAndCancellation from "@/components/damageCancellation";
+import FAQSection from "@/components/faq";
+import QuestionSection from "@/components/questionSection";
 
-const QuestionSection = () => {
-    return (
-      <div className="mb-8 bg-blue-50 p-4 rounded-lg">
-        <div className="space-y-2">
-          <h3 className="font-semibold">Have a question?</h3>
-          <p className="text-sm text-gray-600">Get instant answers with AI powered search of property information and reviews.</p>
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-            <input
-              type="text"
-              placeholder="e.g. Is there free parking?"
-              className="w-full pl-10 pr-12 py-2 rounded-lg border border-gray-300"
-            />
-            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-600">
-              <Search className="w-4 h-4" />
-            </button>
+export default function Home() {
+  return (
+    <div className="max-w-7xl mx-auto">
+      {/* Image Gallery */}
+      <ImageGallery />
+
+      {/* Tabs Section */}
+      <div className="px-6">
+        <TabsSection />
+      </div>
+
+      {/* Two Column Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-6 mt-8">
+        {/* Left Column - Main Content */}
+        <div className="lg:col-span-2">
+          {/* Property Details */}
+          <PropertyDetails />
+
+          {/* Rooms and Beds */}
+          <RoomsAndBeds />
+
+          {/* About Property */}
+          <AboutProperty />
+
+          {/* Amenities */}
+          <AmenitiesSection />
+
+          {/* Questions Section */}
+          <QuestionSection />
+
+          {/* House Rules */}
+          <HouseRules />
+
+          {/* Damage and Cancellation */}
+          <DamageAndCancellation />
+
+          {/* Important Information */}
+          <ImportantInfo />
+
+          {/* Frequently Asked Questions */}
+          <FAQSection />
+
+          {/* Map Section */}
+          <MapSection />
+        </div>
+
+        {/* Right Column - Booking Section */}
+        <div className="lg:col-span-1 space-y-6">
+          {/* Booking Section */}
+          <BookingSection />
+
+          {/* Host and Contact Details */}
+          <div className="text-right text-sm text-gray-600">
+            <div>Contact host</div>
+            <div>Property # 9838104ha</div>
           </div>
         </div>
       </div>
-    );
-  };
-  
+    </div>
+  );
+}
