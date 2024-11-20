@@ -1,22 +1,29 @@
 "use client";
-import React from 'react';
+
+import React from "react";
 import { Image } from "@nextui-org/image";
-import { Share, Heart } from "lucide-react"; // Importing icons for share and like
+import { Share, Heart } from "lucide-react";
 
-const ImageGallery = () => {
+interface ImageGalleryProps {
+  data: any;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ data }) => {
+  
   const images = [
-    "/Assets/images/house1.jpg", 
-    "/Assets/images/house2.jpg", 
-    "/Assets/images/house3.jpg", 
-    "/Assets/images/house4.jpg", 
-    "/Assets/images/house5.jpg", 
-    "/Assets/images/house6.jpg", 
-    "/Assets/images/house7.jpg",
-  ];
+   `http://localhost:3000${data.images[0]}`,
+    `http://localhost:3000${data.rooms[0].images[3]}`,
+    `http://localhost:3000${data.rooms[0].images[1]}`,
+    `http://localhost:3000${data.rooms[0].images[2]}`,
+    `http://localhost:3000${data.rooms[0].images[3]}`,
+    `http://localhost:3000${data.rooms[0].images[4]}`,
+    `http://localhost:3000${data.rooms[0].images[5]}`,
+    `http://localhost:3000${data.rooms[0].images[6]}`,
 
-  const openGallery = () => {
-    console.log("Gallery opened");
-  };
+  ];
+ //console.log(data.images[0]);
+ console.log(data.rooms[0].images[0])
+
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -41,11 +48,11 @@ const ImageGallery = () => {
         </div>
 
         <div className="flex-1 grid grid-rows-3 grid-cols-2 gap-1">
-          {images.slice(1).map((src, index) => (
+          {images.slice(0).map((src, index) => (
             <div key={index} className="flex justify-center items-center relative">
-              <Image src={src} alt={`Image ${index + 1}`} width={360} height={130} className="object-cover" />
+              <Image src={src}  width={360} height={130} className="object-cover" />
               {index === 5 && (  // Last image of the right column
-                <div className="view-more absolute bottom-2 right-2 z-10 cursor-pointer bg-black bg-opacity-50 p-2 rounded-lg text-white" onClick={openGallery}>
+                <div className="view-more absolute bottom-2 right-2 z-10 cursor-pointer bg-black bg-opacity-50 p-2 rounded-lg text-white" >
                   <strong>30+</strong>
                 </div>
               )}
@@ -54,6 +61,7 @@ const ImageGallery = () => {
         </div>
       </div>
     </div>
+
   );
 };
 
