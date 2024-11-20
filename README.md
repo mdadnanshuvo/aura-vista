@@ -54,8 +54,26 @@ To get started with **Property Pioneer** locally, follow the steps below:
     npm run dev
     ```
 
+For Backend Connectivity
 
+1. Clone the repository:
+    ```bash
+    https://github.com/mdadnanshuvo/Hotel-Management-API.git
+    ```
 
+2. Navigate into the project directory:
+    ```bash
+    cd Hotel-Management-API
+    ```
+
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the app:
+    ```bash
+    npm run dev
+the backend (Hotel-Management-API) should be run on the post of 3000.
 
 ## 🔧 Usage
 
